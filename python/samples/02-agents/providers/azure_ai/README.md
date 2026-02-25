@@ -38,6 +38,7 @@ This folder contains examples demonstrating different ways to create and use age
 | [`azure_ai_with_openapi.py`](azure_ai_with_openapi.py) | Shows how to integrate OpenAPI specifications with Azure AI agents using dictionary-based tool configuration. Demonstrates using external REST APIs for dynamic data lookup. |
 | [`azure_ai_with_reasoning.py`](azure_ai_with_reasoning.py) | Shows how to enable reasoning for a model that supports it. |
 | [`azure_ai_with_web_search.py`](azure_ai_with_web_search.py) | Shows how to use `AzureAIClient.get_web_search_tool()` with Azure AI agents to perform web searches and retrieve up-to-date information from the internet. |
+| [`azure_ai_with_hugging_face_text_generation.py`](azure_ai_with_hugging_face_text_generation.py) | Shows how to create an agent backed by a HuggingFace **text-generation** model (e.g. `microsoft/BioGPT-Large`) deployed in Azure AI Foundry as a Managed Online Endpoint. Implements a custom `BaseAgent` that calls the Azure ML scoring endpoint directly, supporting both API-key and Azure credential authentication. |
 
 ## Environment Variables
 
