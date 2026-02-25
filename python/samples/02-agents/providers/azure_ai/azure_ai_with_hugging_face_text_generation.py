@@ -340,10 +340,9 @@ class FoundryTextGenerationAgent(BaseAgent):
         if include_params and self._generation_params:
             payload["parameters"] = self._generation_params
 
-        async with aiohttp.ClientSession() as http_session:
-            async with http_session.post(self._endpoint_url, json=payload, headers=headers) as resp:
-                resp.raise_for_status()
-                result: list[dict[str, Any]] = await resp.json()
+        async with aiohttp.ClientSession() as http_session, http_session.post(self._endpoint_url, json=payload, headers=headers) as resp:
+            resp.raise_for_status()
+            result: list[dict[str, Any]] = await resp.json()
 
         # HuggingFace text-generation response format:
         # [{"generated_text": "<original prompt><generated continuation>"}]
